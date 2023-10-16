@@ -27,7 +27,7 @@ export default class {
     // Fall back to localStorage if nothing is stored in indexeddb, and if neither is available, set the value to header.
     getDb().then((data) => {
       console.info('Loaded data from IndexedDB, injecting into editor');
-      this.editor.setValue(data || localData || header);
+      this.editor.setValue(data?.value || localData || header); //added ?.value to data to deal with `codemirror.min.js:1 Uncaught (in promise) TypeError: e.split is not a function` error in browser console.
     });
 
     this.editor.on('change', () => {
