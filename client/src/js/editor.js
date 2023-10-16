@@ -11,7 +11,6 @@ export default class {
       throw new Error('CodeMirror is not loaded');
     }
     
-    //! Uncaught (in promise) TypeError: e.split is not a function ???
     this.editor = CodeMirror(document.querySelector('#main'), {
       value: '',
       mode: 'javascript',
