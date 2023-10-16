@@ -4,6 +4,7 @@ const { registerRoute } = require('workbox-routing');
 const { CacheableResponsePlugin } = require('workbox-cacheable-response');
 const { ExpirationPlugin } = require('workbox-expiration');
 const { precacheAndRoute } = require('workbox-precaching/precacheAndRoute');
+const { StaleWhileRevalidate } = require('workbox-strategies'); //! Added this, not sure if we should use this strategy.
 
 precacheAndRoute(self.__WB_MANIFEST);
 
@@ -43,5 +44,3 @@ registerRoute(
     ],
   })
 );
-
-registerRoute();
