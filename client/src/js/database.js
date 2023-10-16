@@ -25,7 +25,7 @@ export const putDb = async (content) => {
     // Open up the desired object store.
     const store = tx.objectStore("jate");
     // Use the .add() method on the store and pass in the content.
-    const request = store.put(content);
+    const request = store.put({ content }); //Destructure parameter to create object with property named "content" that holds the value of the content variable. Necessary so the content can be the given an sibling key property?
 
     //Get confirmation of the request
     const result = await request;
