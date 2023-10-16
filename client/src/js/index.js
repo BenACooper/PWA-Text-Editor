@@ -1,3 +1,9 @@
+//! After running "npm run start:dev" in console saw error " WARNING in InjectManifest has been called multiple times, perhaps due to running webpack in --watch mode. The precache manifest generated after the first call may be inaccurate! Please see https://github.com/GoogleChrome/workbox/issues/1790 for more information." Error does not occur with "npm run start". 
+
+//! Curent step 
+//! WHEN I enter content and subsequently click off of the DOM window
+//! THEN I find that the content in the text editor has been saved with IndexedDB
+
 import { Workbox } from 'workbox-window';
 import Editor from './editor';
 import './database'; //Import database.js which in
