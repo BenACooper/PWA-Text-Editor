@@ -10,7 +10,8 @@ export default class {
     if (typeof CodeMirror === 'undefined') {
       throw new Error('CodeMirror is not loaded');
     }
-
+    
+    //! Uncaught (in promise) TypeError: e.split is not a function ???
     this.editor = CodeMirror(document.querySelector('#main'), {
       value: '',
       mode: 'javascript',
@@ -36,7 +37,7 @@ export default class {
     // Save the content of the editor when the editor itself is loses focus
     this.editor.on('blur', () => {
       console.log('The editor has lost focus');
-      putDb(localStorage.getItem('content'));
+      putDb(localStorage.getItem('content')); //! Why not putDb(localData); ?
     });
   }
 }
